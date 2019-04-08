@@ -6,7 +6,7 @@ android {
   buildToolsVersion '27.0.3'
 
   defaultConfig {
-    applicationId "com.sqisland.android.espresso.hello"
+    applicationId "com.mike.android.espresso.guide"
     minSdkVersion 15
     targetSdkVersion 27
     versionCode 1
