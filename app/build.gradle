@@ -23,7 +23,10 @@ android {
 dependencies {
   implementation 'com.android.support:appcompat-v7:27.0.2'
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+  implementation 'com.android.support:recyclerview-v7:27.0.2'
   androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+  androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.1'
+
 }
 
 repositories {
