@@ -1,12 +1,18 @@
 package com.mike.android.espresso.guide
 
+import android.support.test.InstrumentationRegistry
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.assertion.ViewAssertions.matches
+import android.support.test.espresso.matcher.BoundedMatcher
 import android.support.test.espresso.matcher.ViewMatchers.*
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
+import android.support.v7.widget.Toolbar
+import android.view.View
 import org.hamcrest.CoreMatchers.not
+import org.hamcrest.Description
+import org.hamcrest.Matcher
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -27,4 +33,25 @@ class MainActivityTest {
         // 3, TextView displays "Hello"
         onView(withId(R.id.greeting)).check(matches(withText(R.string.hello)))
     }
+
+    @Test
+    fun toolbarTitle() {
+        val title = InstrumentationRegistry.getTargetContext().getString(R.string.title)
+        onView(isAssignableFrom(Toolbar::class.java))
+                .check(matches(withToolbarTitle(title)))
+    }
+
+    private fun withToolbarTitle(expectedTitle: CharSequence): Matcher<View> {
+        return object : BoundedMatcher<View, Toolbar>(Toolbar::class.java) {
+            override fun describeTo(description: Description?) {
+                description?.appendText("with toolbar title: " + expectedTitle)
+            }
+
+            override fun matchesSafely(toolbar: Toolbar?): Boolean {
+                return expectedTitle == toolbar?.title
+            }
+        }
+
+    }
+
 }

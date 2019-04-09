@@ -12,6 +12,9 @@ class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
+
+    setTitle(R.string.title)
+
     greetingView = findViewById(R.id.greeting)
     greetButton = findViewById(R.id.greet_button)
   }
