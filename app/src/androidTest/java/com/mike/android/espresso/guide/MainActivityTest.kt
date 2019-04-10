@@ -54,4 +54,10 @@ class MainActivityTest {
 
     }
 
+    @Test
+    fun clickItem() {
+        onView(withId(R.id.footer))
+                .check(matches(not(isDisplayed())))
+    }
+
 }

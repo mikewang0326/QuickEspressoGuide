@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     val recyclerView: RecyclerView = findViewById(R.id.recycler_view)
     val footer = findViewById<TextView>(R.id.footer)
     footer.setBackgroundColor(Color.LTGRAY)
-    footer.visibility = View.VISIBLE
+    footer.visibility = View.INVISIBLE
 
     recyclerView.setHasFixedSize(true)
     recyclerView.layoutManager = LinearLayoutManager(this)
