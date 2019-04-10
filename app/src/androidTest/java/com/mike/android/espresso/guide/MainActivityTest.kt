@@ -4,6 +4,7 @@ import android.support.test.InstrumentationRegistry
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.assertion.ViewAssertions.matches
+import android.support.test.espresso.contrib.RecyclerViewActions
 import android.support.test.espresso.matcher.BoundedMatcher
 import android.support.test.espresso.matcher.ViewMatchers.*
 import android.support.test.rule.ActivityTestRule
@@ -58,6 +59,13 @@ class MainActivityTest {
     fun clickItem() {
         onView(withId(R.id.footer))
                 .check(matches(not(isDisplayed())))
+
+        onView(withId(R.id.recycler_view)).perform(RecyclerViewActions.actionOnItemAtPosition<NumberAdapter
+        .TextViewHolder>(12, click()))
+
+        onView(withId(R.id.footer))
+                .check(matches(withText("12")))
+                .check(matches(isDisplayed()))
     }
 
 }
