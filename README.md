@@ -19,7 +19,7 @@ PhotoApp uses a number of open source projects to work properly:
 ### Tests 
 ![Alt Text](https://github.com/mikewang0326/QuickEspressoGuide/blob/master/resources/quick_espresso_guide.gif?raw=true)
 
-### Study Notes
+### Study Notes (From Lynda)
 ##### 1, Types of Android Tests
 ![Types of Android Tests](https://github.com/mikewang0326/QuickEspressoGuide/blob/master/resources/types_of_android_tests.png?raw=true "")
 
